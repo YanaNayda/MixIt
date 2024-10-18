@@ -92,20 +92,17 @@
         android:id="@+id/buttonForgotPassword"
         android:layout_width="276dp"
         android:layout_height="50dp"
-        android:background="@android:drawable/menuitem_background"
-        android:backgroundTint="#FFFFFF"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/white"
         android:paddingStart="80dp"
         android:text="Forgot your password?"
-        android:textAlignment="gravity"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordSignIn"
-        app:layout_constraintVertical_bias="0.0"
-        app:strokeColor="@color/white"
-        app:toggleCheckedStateOnClick="false" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonLogIn"
