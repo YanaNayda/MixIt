@@ -56,7 +56,7 @@ public class CreateAccount extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String name = s.toString();
-                if (s.toString().matches("[a-zA-Z]+")) {
+                if (s.toString().matches("[a-zA-Z_ ]+")) {
                     setStrokeColor("#3C966C",editName);
 
                 } else {
