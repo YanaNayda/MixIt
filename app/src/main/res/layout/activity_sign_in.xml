@@ -6,23 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".SignIn">
+    tools:context=".LogIn">
 
 
     <EditText
         android:id="@+id/editTextEmailSign"
-        android:background="@drawable/edit_text_background"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/edit_text_background"
         android:ems="10"
+        android:hint="Enter your Email"
         android:inputType="textEmailAddress"
         android:paddingStart="16dp"
         android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
-        android:hint="Enter your Email"
         android:textColorHint="#91FFFFFF"
         app:barrierMargin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,23 +34,24 @@
 
     <EditText
         android:id="@+id/editTextPasswordSignIn"
-        android:background="@drawable/edit_text_background"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/edit_text_background"
         android:ems="10"
+        android:inputType="textPassword"
         android:hint="Enter your Password"
-        android:textColorHint="#91FFFFFF"
         android:paddingStart="16dp"
         android:textColor="#FFFFFF"
+        android:textColorHint="#91FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmailSign"
-        app:layout_constraintVertical_bias="0.024"/>
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
         android:id="@+id/imageCocktailLeft"
@@ -95,9 +96,9 @@
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:background="@android:color/transparent"
-        android:textColor="@android:color/white"
         android:paddingStart="80dp"
         android:text="Forgot your password?"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,5 +148,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEmailSign"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmailSign"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmailSign"
+        app:layout_constraintTop_toTopOf="@+id/editTextEmailSign"
+        app:srcCompat="@drawable/email_ic" />
+
+    <ImageButton
+        android:id="@+id/eyeButton"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        android:contentDescription="@string/toggle_password_visibility"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPasswordSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordSignIn"
+        app:layout_constraintTop_toTopOf="@+id/editTextPasswordSignIn"
+        app:srcCompat="@drawable/eye_close_ic" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

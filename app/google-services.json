@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938152923499",
+    "project_id": "mixit-2ebe3",
+    "storage_bucket": "mixit-2ebe3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938152923499:android:9e5d224d16e2c5464a7c2e",
+        "android_client_info": {
+          "package_name": "com.example.mixit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhvRAksqXDuO6l_K0gXCEKURD_EHHZ0i0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
