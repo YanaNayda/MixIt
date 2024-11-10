@@ -8,6 +8,7 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.text.style.UnderlineSpan;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -28,7 +29,9 @@ public class LogIn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_log_in);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         Button buttonForgotYourPassword =(Button) findViewById(R.id.buttonForgotPassword);
         Button buttonNewAccount = (Button) findViewById(R.id.buttonNewAccount);
@@ -37,6 +40,7 @@ public class LogIn extends AppCompatActivity {
         EditText  editPassword =(EditText)findViewById(R.id.editTextPasswordSignIn);
         EditText editEmail = (EditText)findViewById(R.id.editTextEmailSign) ;
         TextView textLogInWith=(TextView)findViewById(R.id.textLogInWith);
+
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -109,7 +113,8 @@ public class LogIn extends AppCompatActivity {
                         // Sign in success, navigate to main activity
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(LogIn.this, "Authentication successful.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LogIn.this, Home.class));
+                        Intent intent = new Intent(LogIn.this, Home.class);
+                        startActivity(intent);
                         finish();
                     } else {
                         // If sign in fails, display a message to the user

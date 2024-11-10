@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/game_settings"
+        android:icon="@drawable/game_icon"
+        android:title="Game" />
+    <item
+        android:id="@+id/diy_settings"
+        android:icon="@drawable/diy_icon"
+        android:title="DIY" />
+    <item
+        android:id="@+id/home_settings"
+        android:icon="@drawable/home_icon"
+        android:title="Home" />
+    <item
+        android:id="@+id/advice_settings"
+        android:icon="@drawable/advice_icon"
+        android:title="Advice" />
+    <item
+        android:id="@+id/cocktails_settings"
+        android:checkable="false"
+        android:icon="@drawable/cocktails_icon"
+        android:title="Cocktails" />
+</menu>
