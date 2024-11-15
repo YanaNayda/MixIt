@@ -17,7 +17,6 @@
         android:title="Advice" />
     <item
         android:id="@+id/cocktails_settings"
-        android:checkable="false"
         android:icon="@drawable/cocktails_icon"
         android:title="Cocktails" />
 </menu>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MixIt</string>
     <string name="toggle_password_visibility">Toggle password visibility</string>
+    <string name="logo">App Logo</string>
 </resources>

@@ -2,10 +2,12 @@ package com.example.mixit;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
+import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,7 +15,15 @@ public  class HelperBaseActivity extends AppCompatActivity {
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.helper_base);
+
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+
+            ImageView logo = findViewById(R.id.logo);
+            logo.setVisibility(View.VISIBLE);
+
+
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
             bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -37,6 +47,20 @@ public  class HelperBaseActivity extends AppCompatActivity {
                 return false;
             });
         }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.profile_settings) {
+            // Handle profile settings click
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 
 

@@ -7,19 +7,7 @@ android:id="@+id/main"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@drawable/background">
+    <include layout="@layout/helper_base" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#9D000000"
-        app:backgroundTint="#91000000"
-        app:itemTextColor="@color/nav_item_text_color"
-        app:itemIconTint="@color/white"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation_menu"
-        style="@style/NoRippleBottomNavigationView"
-        />
 </RelativeLayout>
 
