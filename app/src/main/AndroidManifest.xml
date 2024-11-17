@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/glasscocktailred"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:windowTranslucentStatus="true"
         android:roundIcon="@drawable/edit_text_background"

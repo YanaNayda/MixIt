@@ -4,6 +4,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:autofilledHighlight">@color/backTintColor</item>
 
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
