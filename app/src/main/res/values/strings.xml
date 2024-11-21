@@ -2,4 +2,24 @@
     <string name="app_name">MixIt</string>
     <string name="toggle_password_visibility">Toggle password visibility</string>
     <string name="logo">App Logo</string>
+    <string name="sign_in_title">Sign In</string>
+    <string name="enter_your_email_text">Enter your Email</string>
+    <string name="enter_your_name_text">Enter your Name</string>
+    <string name="enter_your_password_text">Enter your Password</string>
+    <string name="confirm_your_password_text">Confirm your Password</string>
+    <string name="register_button">Register</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="forgot_your_password_button">Forgot your password?</string>
+    <string name="log_in_button">Log In</string>
+    <string name="create_an_account_button">Create an account</string>
+    <string name="or_log_in_with_text">Or Log in with</string>
+    <string name="start_button">start</string>
+    <string name="welcome_to_mixit_text">Welcome to Mixit!</string>
+    <string name="enter_your_email_text_login">Enter your Email</string>
+    <string name="game_button">Game</string>
+    <string name="diy_button">DIY</string>
+    <string name="home_button">Home</string>
+    <string name="advice_button">Advice</string>
+    <string name="cocktails_button">Cocktails</string>
+    <string name="profile_button">Profile</string>
 </resources>

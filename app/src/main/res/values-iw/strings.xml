@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MixIt</string>
+    <string name="toggle_password_visibility">סיסמה</string>
+    <string name="logo">אפליקציית לוגו</string>
+    <string name="sign_in_title">הרשמה</string>
+    <string name="enter_your_email_text">הזן את כתובת האימייל שלך</string>
+    <string name="enter_your_name_text">הזן את שמך</string>
+    <string name="enter_your_password_text">הזן את הסיסמה שלך</string>
+    <string name="confirm_your_password_text">אשר את הסיסמה שלך</string>
+    <string name="register_button">הירשם</string>
+    <string name="enter_your_password">הזן את הסיסמה שלך</string>
+    <string name="forgot_your_password_button">שכחת את הסיסמה?</string>
+    <string name="log_in_button">התחבר</string>
+    <string name="create_an_account_button">צור חשבון</string>
+    <string name="or_log_in_with_text">או התחבר באמצעות</string>
+    <string name="start_button">התחל</string>
+    <string name="welcome_to_mixit_text">ברוך הבא ל-Mixit!</string>
+    <string name="enter_your_email_text_login">הזן את כתובת האימייל שלך</string>
+    <string name="game_button">משחק</string>
+    <string name="diy_button">DIY</string>
+    <string name="home_button">בית</string>
+    <string name="advice_button">המלצות</string>
+    <string name="cocktails_button">קוקטיילים</string>
+    <string name="profile_button">רופילפ</string>
+
+</resources>

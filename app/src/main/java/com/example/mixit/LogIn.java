@@ -23,105 +23,93 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogIn extends AppCompatActivity {
 
     private boolean isPasswordVisible = false;
-    private FirebaseAuth mAuth; // Initialize FirebaseAuth
-
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+
+
+        setContentView(R.layout.activity_welcome);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-        Button buttonForgotYourPassword =(Button) findViewById(R.id.buttonForgotPassword);
-        Button buttonNewAccount = (Button) findViewById(R.id.buttonNewAccount);
-        Button buttonLogIn =(Button)findViewById(R.id.buttonLogIn);
-        ImageButton  buttonEye =(ImageButton)findViewById(R.id.eyeButton);
-        EditText  editPassword =(EditText)findViewById(R.id.editTextPasswordSignIn);
-        EditText editEmail = (EditText)findViewById(R.id.editTextEmailSign) ;
-        TextView textLogInWith=(TextView)findViewById(R.id.textLogInWith);
+        Button buttonStart = findViewById(R.id.StartButton);
+        buttonStart.setOnClickListener(v -> showLogInScreen());
+    }
+
+    private void showLogInScreen() {
+
+        setContentView(R.layout.activity_log_in);
 
         mAuth = FirebaseAuth.getInstance();
 
+        Button buttonForgotYourPassword = findViewById(R.id.buttonForgotPassword);
+        Button buttonNewAccount = findViewById(R.id.buttonNewAccount);
+        Button buttonLogIn = findViewById(R.id.buttonLogIn);
+        ImageButton buttonEye = findViewById(R.id.eyeButton);
+        EditText editPassword = findViewById(R.id.editTextPasswordSignIn);
+        EditText editEmail = findViewById(R.id.editTextEmailSign);
+        TextView textLogInWith = findViewById(R.id.textLogInWith);
 
+        // Подчеркивание текста
+        underlineText(textLogInWith);
+        underlineText(buttonForgotYourPassword);
 
-        // Line under textView "textLogInWith"
-        String textLogwithLine = (String) textLogInWith.getText();
-        SpannableString LineForTextLogWith =new SpannableString(textLogwithLine);
-        LineForTextLogWith.setSpan(new UnderlineSpan(), 0,textLogwithLine.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        textLogInWith.setText(LineForTextLogWith);
+        // Обработка видимости пароля
+        buttonEye.setOnClickListener(v -> togglePasswordVisibility(editPassword, buttonEye));
 
-
-        // Line under text in the button "buttonForgotPassword"
-        String textForgotYourPassword = (String) buttonForgotYourPassword.getText();
-        SpannableString LineForForgotButton =new SpannableString(textForgotYourPassword);
-        LineForForgotButton.setSpan(new UnderlineSpan(), 0,textForgotYourPassword.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        buttonForgotYourPassword.setText(LineForForgotButton);
-
-        //editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-       // buttonEye.setImageResource(R.drawable.eye_close_ic);
-
-
-        buttonEye.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               if( isPasswordVisible){
-                   editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                   buttonEye.setImageResource(R.drawable.eye_close_ic);
-                   isPasswordVisible = false;
-               }
-               else{
-                   editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                   buttonEye.setImageResource(R.drawable.eye_open_ic);
-                   isPasswordVisible = true;
-               }
-
-            }
+        // Переход на экран регистрации
+        buttonNewAccount.setOnClickListener(v -> {
+            Intent myIntent = new Intent(LogIn.this, CreateAccount.class);
+            startActivity(myIntent);
         });
 
-        buttonNewAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(LogIn.this,
-                        CreateAccount.class);
-                startActivity(myIntent);
+        // Логин
+        buttonLogIn.setOnClickListener(v -> {
+            String password = editPassword.getText().toString();
+            String email = editEmail.getText().toString();
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(LogIn.this, "Please fill in all fields.", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            loginUser(email, password);
         });
-        buttonLogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String password = editPassword.getText().toString();
-                String email = editEmail.getText().toString();
+    }
 
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LogIn.this, "Please fill in all fields.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+    private void underlineText(TextView textView) {
+        String text = textView.getText().toString();
+        SpannableString spannableString = new SpannableString(text);
+        spannableString.setSpan(new UnderlineSpan(), 0, text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(spannableString);
+    }
 
-                // Call the login method
-                loginUser(email, password);
-            }
-        });
-
-
+    private void togglePasswordVisibility(EditText editPassword, ImageButton buttonEye) {
+        if (isPasswordVisible) {
+            editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            buttonEye.setImageResource(R.drawable.eye_close_ic);
+            isPasswordVisible = false;
+        } else {
+            editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            buttonEye.setImageResource(R.drawable.eye_open_ic);
+            isPasswordVisible = true;
+        }
     }
 
     private void loginUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        // Sign in success, navigate to main activity
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(LogIn.this, "Authentication successful.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LogIn.this, Home.class);
                         startActivity(intent);
                         finish();
                     } else {
-                        // If sign in fails, display a message to the user
                         Toast.makeText(LogIn.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
-
 }

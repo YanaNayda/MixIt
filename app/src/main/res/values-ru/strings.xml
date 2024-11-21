@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MixIt</string>
+    <string name="toggle_password_visibility">пароль</string>
+    <string name="logo">лого</string>
+    <string name="sign_in_title">Регистрация</string>
+    <string name="enter_your_email_text">Введите ваш Имейл</string>
+    <string name="enter_your_name_text">Введите ваше имя</string>
+    <string name="enter_your_password_text">Введите ваш пароль</string>
+    <string name="confirm_your_password_text">Подтвердите ваш пароль</string>
+    <string name="register_button">Регистрация</string>
+    <string name="enter_your_password">Введите ваш пароль</string>
+    <string name="forgot_your_password_button">Забыли пароль?</string>
+    <string name="log_in_button">Войти</string>
+    <string name="create_an_account_button">Создать аккаунт</string>
+    <string name="or_log_in_with_text">Или войдите с помощью</string>
+    <string name="start_button">Начать</string>
+    <string name="welcome_to_mixit_text">Добро пожаловать в Mixit!</string>
+    <string name="enter_your_email_text_login">Введите ваш Имейл</string>
+    <string name="game_button">Игра</string>
+    <string name="diy_button">DIY</string>
+    <string name="home_button">Главная</string>
+    <string name="advice_button">Советы</string>
+    <string name="cocktails_button">Коктейли</string>
+    <string name="profile_button">Профиль</string>
+
+
+</resources>

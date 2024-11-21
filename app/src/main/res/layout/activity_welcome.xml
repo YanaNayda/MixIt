@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Welcome">
+    >
 
     <Button
 
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="start"
+        android:text="@string/start_button"
         android:textAllCaps="true"
         android:textColor="#000000"
         android:textColorLink="#000000"
@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
-        android:text="Welcome to Mixit!"
+        android:text="@string/welcome_to_mixit_text"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"

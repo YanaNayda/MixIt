@@ -2,21 +2,21 @@
     <item
         android:id="@+id/game_settings"
         android:icon="@drawable/game_icon"
-        android:title="Game" />
+        android:title="@string/game_button" />
     <item
         android:id="@+id/diy_settings"
         android:icon="@drawable/diy_icon"
-        android:title="DIY" />
+        android:title="@string/diy_button" />
     <item
         android:id="@+id/home_settings"
         android:icon="@drawable/home_icon"
-        android:title="Home" />
+        android:title="@string/home_button" />
     <item
         android:id="@+id/advice_settings"
         android:icon="@drawable/advice_icon"
-        android:title="Advice" />
+        android:title="@string/advice_button" />
     <item
         android:id="@+id/cocktails_settings"
         android:icon="@drawable/cocktails_icon"
-        android:title="Cocktails" />
+        android:title="@string/cocktails_button" />
 </menu>

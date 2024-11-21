@@ -19,7 +19,7 @@ plugins {
 }
 
 allprojects {
-        // Репозитории больше не нужны здесь, они объявлены в settings.gradle
+
 }
 
 
