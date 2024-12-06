@@ -80,6 +80,8 @@ public class LogIn extends AppCompatActivity {
                 return;
             }
 
+
+
             loginUser(email, password);
         });
     }
