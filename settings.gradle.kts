@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MixIt"
 include(":app")
- 
+include(":ui")
+include(":ui:core")
