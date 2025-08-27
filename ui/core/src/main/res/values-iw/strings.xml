@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="welcome">ברוך הבא ל - MixIt!</string>
+    <string name="start">התחל</string>
+    <string name="icon_arrow_left">אייקון חץ שמאל</string>
+    <string name="sign_in">הרשמה</string>
+    <string name="user_name_hint">הכנס שמך</string>
+    <string name="user_email_hint">הכנס אימייל</string>
+    <string name="user_password_hint">הכנס סיסמה</string>
+    <string name="user_confirm_password_hint">אשר סיסמה</string>
+    <string name="register">הרשם</string>
+    <string name="log_in">התחברות</string>
+    <string name="forgot_password">שכחת סיסמה?</string>
+    <string name="or_log_in_with">או התחבר עם:</string>
+    <string name="button_facebook">F</string>
+    <string name="button_google">G</string>
+    <string name="create_an_account">צור חשבון</string>
+
+</resources>
