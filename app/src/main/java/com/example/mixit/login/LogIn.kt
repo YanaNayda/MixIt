@@ -38,13 +38,14 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import androidx.navigation.NavController
 import com.example.mixit.R
 import components.NavigateButton
 import components.UserTextField
 
 
 @Composable
-fun LogIn() {
+fun LogIn(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -114,7 +115,9 @@ fun LogIn() {
                 Spacer(modifier= Modifier.height(20.dp))
 
                 NavigateButton(
-                    text = "Log in", onClick = {})
+                    text = "Log in", onClick = {
+                        navController.navigate("home")
+                    })
 
                 Spacer(modifier= Modifier.height(60.dp))
 

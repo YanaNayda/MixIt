@@ -1,4 +1,4 @@
-package com.example.mixit
+package com.example.mixit.welcome
 import InfiniteAutoScrollRow
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -20,10 +20,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.mixit.navigation.Screen
 
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
+
     val images = listOf(
         Resources.Icon.logo,
         Resources.Icon.cocktail1,
@@ -90,7 +93,9 @@ fun WelcomeScreen() {
             modifier = Modifier.padding(top = 32.dp)
         )
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+                navController.navigate(Screen.LogIn.route)
+            },
             modifier = Modifier.padding(top = 24.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFFFFFFF),

@@ -23,3 +23,8 @@ rootProject.name = "MixIt"
 include(":app")
 include(":ui")
 include(":ui:core")
+include(":home")
+include(":diy")
+include(":cocktails")
+include(":advice")
+include(":game")
