@@ -3,6 +3,14 @@ package com.example.mixit.login
 import Resources.Icon.background
 import Resources.Icon.cocktail1
 import Resources.Icon.cocktail2
+import Resources.String.buttonFacebook
+import Resources.String.buttonGoogle
+import Resources.String.createAnAccount
+import Resources.String.forgotPassword
+import Resources.String.logIn
+import Resources.String.orLogInWith
+import Resources.String.userEmailHint
+import Resources.String.userNameHint
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,6 +41,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -70,70 +79,78 @@ fun LogIn(navController: NavController) {
                 Image(
                     modifier = Modifier.size(100.dp),
                     painter = painterResource(cocktail1),
-                    contentDescription = "cocktail1"
+                    contentDescription = ""
                 )
                 Image(
                     modifier = Modifier.size(100.dp),
                     painter = painterResource(cocktail2),
-                    contentDescription = "cocktail2"
+                    contentDescription = ""
                 )
             }
 
-            Text(text = "LOG IN",
-                color = Color.White, fontWeight = FontWeight.Bold, fontSize = 24.sp,
+            Text(text = stringResource(logIn).uppercase(),
+                color = Color.White, fontWeight = FontWeight.Bold, fontSize = 28.sp,
                 modifier = Modifier.clickable {
                 })
 
-            Spacer(modifier= Modifier.height(70.dp))
+            Spacer(modifier = Modifier.height(70.dp))
 
 
             Column(
                 modifier = Modifier.fillMaxWidth(),
-                Arrangement.SpaceBetween,
-                Alignment.CenterHorizontally
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
                 UserTextField(
-                    value = email, onValueChange = { email = it }, label = "Enter Your Email",
+                    value = email, onValueChange = { email = it }, label = stringResource(
+                        userNameHint
+                    ),
                     leadingIcon = Icons.Default.Email
                 )
 
                 UserTextField(
                     value = password,
                     onValueChange = { password = it },
-                    label = "Enter Your Password",
+                    label = stringResource(
+                        userEmailHint
+                    ),
                     leadingIcon = Icons.Default.Lock
                 )
 
-                Spacer(modifier= Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(10.dp))
 
-                Text(text = "Forgot Your Password?", textDecoration = TextDecoration.Underline,
-                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 12.sp,
-                    modifier = Modifier.align(Alignment.End).padding(end = 50.dp).clickable {
-                    })
+                Text(text = stringResource(forgotPassword), textDecoration = TextDecoration.Underline,
+                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp,
+                    modifier = Modifier
+                        .align(Alignment.End)
+                        .padding(end = 50.dp)
+                        .clickable {
+                        })
 
-                Spacer(modifier= Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(25.dp))
 
                 NavigateButton(
                     text = "Log in", onClick = {
                         navController.navigate("home")
                     })
+                    text = stringResource(logIn), onClick = {})
 
-                Spacer(modifier= Modifier.height(60.dp))
+                Spacer(modifier = Modifier.height(60.dp))
 
-                Text(text = "Or Log In With:", textDecoration = TextDecoration.Underline,
-                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 10.sp,
+                Text(text = stringResource(orLogInWith), textDecoration = TextDecoration.Underline,
+                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 12.sp,
                     modifier = Modifier.clickable {
                     })
 
                 NavigateButton(
-                    text = "F", onClick = {})
+                    text = stringResource(buttonFacebook), onClick = {})
 
                 NavigateButton(
-                    text = "G", onClick = {})
+                    text = stringResource(buttonGoogle), onClick = {})
 
-                Text(text = "Create An Account", textDecoration = TextDecoration.Underline,
-                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp,
+                Text(text = stringResource(createAnAccount), textDecoration = TextDecoration.Underline,
+                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp,
                     modifier = Modifier.clickable {
                     })
             }
