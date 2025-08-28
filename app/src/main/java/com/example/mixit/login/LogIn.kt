@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
 import com.example.mixit.R
+import com.example.mixit.navigation.Screen
 import components.NavigateButton
 import components.UserTextField
 
@@ -131,10 +132,10 @@ fun LogIn(navController: NavController) {
                 Spacer(modifier = Modifier.height(25.dp))
 
                 NavigateButton(
-                    text = "Log in", onClick = {
-                        navController.navigate("home")
+                    text = stringResource(logIn), onClick = {
+                        navController.navigate(Screen.Home.route)
+
                     })
-                    text = stringResource(logIn), onClick = {})
 
                 Spacer(modifier = Modifier.height(60.dp))
 
