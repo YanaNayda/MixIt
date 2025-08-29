@@ -248,4 +248,4 @@ val customColor1ContainerDarkHighContrast = Color(0xFF96C7F6)
 val onCustomColor1ContainerDarkHighContrast = Color(0xFF000C19)
 
 
-val barnavigationColor= Color(0xBC291C3F)
+val barnavigationColor= Color(0xCB020101)

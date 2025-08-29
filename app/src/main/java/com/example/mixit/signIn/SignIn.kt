@@ -54,14 +54,17 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
+import com.example.mixit.navigation.Screen
 import components.NavigateButton
+import components.TopImages
 import components.UserTextField
 @Composable
 fun HalfImage(
     painter: Painter,
     contentDescription: String?,
     modifier: Modifier = Modifier,
-    side: String = "left" // "left" או "right"
+    side: String = "left"
 ) {
     val shape = remember(side) {
         object : Shape {
@@ -89,7 +92,7 @@ fun SignIn() {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
-
+    var navController = rememberNavController()
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -104,30 +107,18 @@ fun SignIn() {
             Arrangement.Top,
             Alignment.CenterHorizontally
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                Arrangement.SpaceBetween
-            ) {
-                Image(
-                    modifier = Modifier.size(100.dp),
-                    painter = painterResource(cocktail1),
-                    contentDescription = "cocktail1"
-                )
-                Image(
-                    modifier = Modifier.size(100.dp),
-                    painter = painterResource(cocktail2),
-                    contentDescription = "cocktail2"
-                )
-            }
+            TopImages()
 
-            Spacer(modifier = Modifier.height(80.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             IconButton(
                 colors = IconButtonDefaults.iconButtonColors(
                     contentColor = Color.White
                 ),
                 modifier = Modifier.align(Alignment.Start),
-                onClick = { }
+                onClick = {
+                    navController.navigate(Screen.LogIn.route)
+                }
             ) {
                 Icon(
                     imageVector = Icons.Default.KeyboardArrowLeft,

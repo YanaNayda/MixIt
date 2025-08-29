@@ -1,8 +1,7 @@
 package com.example.mixit.login
 
 import Resources.Icon.background
-import Resources.Icon.cocktail1
-import Resources.Icon.cocktail2
+
 import Resources.String.buttonFacebook
 import Resources.String.buttonGoogle
 import Resources.String.createAnAccount
@@ -11,21 +10,16 @@ import Resources.String.logIn
 import Resources.String.orLogInWith
 import Resources.String.userEmailHint
 import Resources.String.userNameHint
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
@@ -39,18 +33,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
-import com.example.mixit.R
 import com.example.mixit.navigation.Screen
 import components.NavigateButton
+import components.TopImages
 import components.UserTextField
 
 
@@ -73,28 +65,13 @@ fun LogIn(navController: NavController) {
             Arrangement.Top,
             Alignment.CenterHorizontally
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                Arrangement.SpaceBetween
-            ) {
-                Image(
-                    modifier = Modifier.size(100.dp),
-                    painter = painterResource(cocktail1),
-                    contentDescription = ""
-                )
-                Image(
-                    modifier = Modifier.size(100.dp),
-                    painter = painterResource(cocktail2),
-                    contentDescription = ""
-                )
-            }
-
+            TopImages()
+            Spacer(modifier = Modifier.height(20.dp))
             Text(text = stringResource(logIn).uppercase(),
                 color = Color.White, fontWeight = FontWeight.Bold, fontSize = 28.sp,
-                modifier = Modifier.clickable {
-                })
-
-            Spacer(modifier = Modifier.height(70.dp))
+                modifier = Modifier
+                    .clickable {
+                    })
 
 
             Column(
@@ -153,6 +130,7 @@ fun LogIn(navController: NavController) {
                 Text(text = stringResource(createAnAccount), textDecoration = TextDecoration.Underline,
                     color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp,
                     modifier = Modifier.clickable {
+                        navController.navigate(Screen.SignIn.route)
                     })
             }
         }

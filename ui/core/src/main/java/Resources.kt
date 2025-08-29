@@ -10,6 +10,18 @@ object Resources {
         val cocktail4 = R.drawable.cocktail4
         val cocktail5 = R.drawable.cocktail5
         val logo = R.drawable.logomixit
+        val game = R.drawable.game_bar
+        val diy = R.drawable.handyman_bar
+        val advice = R.drawable.advice_bar
+        val cocktails = R.drawable.cocktails_bar
+        val home = R.drawable.home_bar
+
+
+
+
+
+
+
 
     }
 

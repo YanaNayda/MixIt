@@ -1,9 +1,9 @@
 package com.example.mixit.navigation
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ShoppingCart
+import Resources.Icon.advice
+import Resources.Icon.cocktails
+import Resources.Icon.diy
+import Resources.Icon.game
+import Resources.Icon.home
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -15,34 +15,35 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavHostController
 import com.example.mixit.navigation.data.NavigationItem
 
 
 val navigationItems = listOf(
     NavigationItem(
+        title = "Game",
+        icon =  game,
+        route = Screen.Game.route
+    ),
+    NavigationItem(
+        title = "DIY",
+        icon = diy,
+        route = Screen.DIY.route
+    ),
+    NavigationItem(
         title = "Home",
-        icon = Icons.Default.Home,
+        icon = home,
         route = Screen.Home.route
     ),
     NavigationItem(
         title = "Cocktails",
-        icon = Icons.Default.Person,
+        icon = cocktails,
         route = Screen.Cocktails.route
     ),
     NavigationItem(
-        title = "DIY",
-        icon = Icons.Default.ShoppingCart,
-        route = Screen.DIY.route
-    ),
-    NavigationItem(
-        title = "Game",
-        icon = Icons.Default.Settings,
-        route = Screen.Game.route
-    ),
-    NavigationItem(
         title = "Advice",
-        icon = Icons.Default.Settings,
+        icon = advice,
         route = Screen.Advice.route
     )
 )
@@ -53,22 +54,21 @@ fun BottomNavigationBar(
     modifier: Modifier = Modifier
 ) {
     val selectedNavigationIndex = rememberSaveable { mutableIntStateOf(0) }
+    NavigationBar(containerColor =   MaterialTheme.colorScheme.background,modifier = modifier) {
 
-    NavigationBar(containerColor =   MaterialTheme.colorScheme.tertiary,modifier = modifier) {
         navigationItems.forEachIndexed { index, item ->
             NavigationBarItem(
                 selected = selectedNavigationIndex.intValue == index,
                 onClick = {
                     selectedNavigationIndex.intValue = index
                     navController.navigate(item.route) {
-
                         popUpTo(Screen.Home.route) { saveState = true }
                         launchSingleTop = true
                         restoreState = true
                     }
                 },
                 icon = {
-                    Icon(imageVector = item.icon, contentDescription = item.title)
+                    Icon( painter = painterResource(id = item.icon), contentDescription = item.title)
                 },
                 label = {
                     Text(
@@ -78,8 +78,8 @@ fun BottomNavigationBar(
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = MaterialTheme.colorScheme.error,
-                    indicatorColor = MaterialTheme.colorScheme.primary
+                    selectedIconColor = Color.Gray,
+                    indicatorColor = Color.White
                 )
             )
         }
