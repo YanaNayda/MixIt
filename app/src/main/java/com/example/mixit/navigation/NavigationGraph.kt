@@ -5,20 +5,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.example.mixit.welcome.WelcomeScreen
 import com.example.mixit.login.LogIn
+import com.example.mixit.navigation.botttom_navigation.BottomNavigation
 import com.example.mixit.signIn.SignIn
-
-sealed class Screen(val route: String) {
-    object WelcomeScreen : Screen("welcome")
-    object LogIn : Screen("login")
-    object Home: Screen("home")
-    object Cocktails: Screen("cocktails")
-    object DIY: Screen("diy")
-    object Game: Screen("game")
-    object Advice: Screen("advice")
-    object SignIn: Screen("signIn")
+import com.example.profile.Profile
 
 
-}
+
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
@@ -33,14 +25,13 @@ fun NavigationGraph(navController: NavHostController) {
             LogIn(navController)
         }
         composable(Screen.Home.route) { backStackEntry ->
-            BottomNavigation()
+            BottomNavigation( )
         }
         composable(Screen.SignIn.route) { backStackEntry ->
             SignIn()
         }
-
-
-
-
+        composable(Screen.Profile.route){ backStackEntry ->
+            Profile()
+        }
     }
 }

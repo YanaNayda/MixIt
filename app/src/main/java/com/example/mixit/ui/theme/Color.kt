@@ -249,3 +249,4 @@ val onCustomColor1ContainerDarkHighContrast = Color(0xFF000C19)
 
 
 val barnavigationColor= Color(0xCB020101)
+val primaryTopBar = Color(0xFF0D0B23)

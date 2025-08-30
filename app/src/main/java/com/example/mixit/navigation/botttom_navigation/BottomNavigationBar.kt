@@ -1,4 +1,4 @@
-package com.example.mixit.navigation
+package com.example.mixit.navigation.botttom_navigation
 import Resources.Icon.advice
 import Resources.Icon.cocktails
 import Resources.Icon.diy
@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavHostController
+import com.example.compose.primaryTopBar
+import com.example.mixit.navigation.Screen
 import com.example.mixit.navigation.data.NavigationItem
 
 
@@ -54,8 +56,11 @@ fun BottomNavigationBar(
     modifier: Modifier = Modifier
 ) {
     val selectedNavigationIndex = rememberSaveable { mutableIntStateOf(0) }
-    NavigationBar(containerColor =   MaterialTheme.colorScheme.background,modifier = modifier) {
-
+    NavigationBar(
+        containerColor = primaryTopBar,
+        contentColor = Color.White,
+        modifier = modifier)
+    {
         navigationItems.forEachIndexed { index, item ->
             NavigationBarItem(
                 selected = selectedNavigationIndex.intValue == index,
@@ -74,12 +79,16 @@ fun BottomNavigationBar(
                     Text(
                         item.title,
                         color = if (index == selectedNavigationIndex.intValue)
-                            Color.Black else Color.Gray
+                            Color.White else primaryTopBar
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color.Gray,
-                    indicatorColor = Color.White
+                    selectedIconColor = primaryTopBar,
+                    indicatorColor = Color.White,
+                    selectedTextColor = Color.White,
+                    unselectedTextColor = primaryTopBar,
+                    unselectedIconColor = Color.White
+
                 )
             )
         }

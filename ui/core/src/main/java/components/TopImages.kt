@@ -38,6 +38,7 @@ fun TopImages() {
         state = listState,
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(horizontal = horizontalPadding, vertical = 16.dp),
+        userScrollEnabled = false,
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(Int.MAX_VALUE) { index ->

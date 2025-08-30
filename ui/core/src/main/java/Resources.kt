@@ -15,14 +15,8 @@ object Resources {
         val advice = R.drawable.advice_bar
         val cocktails = R.drawable.cocktails_bar
         val home = R.drawable.home_bar
-
-
-
-
-
-
-
-
+        val profile = R.drawable.account_circle_bar
+        val menu = R.drawable.menu_bar
     }
 
     object String{

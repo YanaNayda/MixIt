@@ -1,5 +1,4 @@
-package com.example.home
-
+package com.example.profile
 
 import Resources.Icon.background
 import androidx.compose.foundation.Image
@@ -11,10 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 
-
 @Composable
-fun Home ( )  {
-
+fun Profile(){
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -25,7 +22,7 @@ fun Home ( )  {
             contentScale = ContentScale.FillBounds
         )
         Text(
-            text = "Hello Home !"
+            text = "Hello Profile !"
         )
     }
 }
