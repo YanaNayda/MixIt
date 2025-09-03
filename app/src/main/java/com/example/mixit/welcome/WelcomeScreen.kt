@@ -1,6 +1,5 @@
 package com.example.mixit.welcome
 import InfiniteAutoScrollRow
-import Resources.String.logIn
 import Resources.String.start
 import Resources.String.welcome
 import androidx.compose.foundation.Image

@@ -13,7 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mixit.navigation.Screen
-import com.example.mixit.navigation.top_navigation.TopNavigationBar
+import com.example.mixit.navigation.drawers_navigation.NavigationDrawer
+
 
 
 @Composable
@@ -21,11 +22,8 @@ fun BottomNavigation( ) {
     val bottomNavController = rememberNavController()
         Scaffold(
             topBar = {
-                TopNavigationBar(
-                    navController = bottomNavController,
-                    onProfileClick = { bottomNavController.navigate("profile")
-                }
-            )
+                NavigationDrawer(bottomNavController)
+
             },
             bottomBar = {
                 BottomNavigationBar(
